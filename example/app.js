@@ -24,11 +24,20 @@ function setupApp(app) {
     next();
   });
   
-  app.features('/login', {
-    getid: function (login, password, next) { 
-      next((login == 'foo' && password == 'bar') ? 1 : null) 
-    }
-  });
+  // As a hoster feature
+  if (app.features) { 
+    app.features('/login', {
+      getid: function (login, password, next) { 
+        next((login == 'foo' && password == 'bar') ? 1 : null) 
+      }
+    });
+  } else { // As a regular express app
+    require('hoster-login')(app, {
+      getid: function (login, password, next) { 
+        next((login == 'foo' && password == 'bar') ? 1 : null) 
+      }
+    });
+  }
   
   app.get('/', function (req, res) { res.render('home') });
   app.get('/login', function (req, res) { res.render('login', { redirect: req.query.redirect }) });
