@@ -1,0 +1,9 @@
+Home page
+
+{% if identified %}
+<form action="/logout?_method=delete" method="POST">
+  <input type="submit" value="logout">
+</form>
+{% endif %}
+
+<a href="/secret">Show secret</a>

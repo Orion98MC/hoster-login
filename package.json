@@ -1,0 +1,19 @@
+{
+  "name": "hoster-login",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "atpl": "^0.7.8",
+    "express": "^4.7.2",
+    "express-session": "^1.7.2",
+    "body-parser": "^1.5.2",
+    "method-override": "^2.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thierry Passeron",
+  "license": "MIT"
+}
